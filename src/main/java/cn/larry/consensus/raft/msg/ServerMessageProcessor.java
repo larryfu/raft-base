@@ -177,7 +177,7 @@ public class ServerMessageProcessor implements CommMessageProcessor {
         appendEntry.setTerm(req.getTerm());
         appendEntry.setPreLogIndex(req.getPreLogIndex());
         appendEntry.setPreLogTerm(req.getPreLogTerm());
-        appendEntry.setAllReplace(req.getAllReplace());
+     //   appendEntry.setAllReplace(req.getAllReplace());
         appendEntry.setEntries(req.getEntriesList());
         final CountDownLatch latch = new CountDownLatch(1);
         raftAlgorithm.putMessage(appendEntry, new Consumer() {

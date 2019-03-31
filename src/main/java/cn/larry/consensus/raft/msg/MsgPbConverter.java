@@ -18,7 +18,7 @@ public class MsgPbConverter {
             AppendEntry aeMsg = (AppendEntry) msg;
             AppendEntryReq.Builder reqBuilder = AppendEntryReq.newBuilder();
             reqBuilder.setTerm(aeMsg.getTerm());
-            reqBuilder.setAllReplace(aeMsg.isAllReplace());
+         //   reqBuilder.setAllReplace(aeMsg.isAllReplace());
             reqBuilder.addAllEntries(aeMsg.getEntries());
             reqBuilder.setLeaderCommit(aeMsg.getLeaderCommit());
             reqBuilder.setLeaderId(aeMsg.getLeaderId());
@@ -62,7 +62,7 @@ public class MsgPbConverter {
             AppendEntryReq aeReq = (AppendEntryReq) pbMsg;
             AppendEntry appendEntry = new AppendEntry();
             appendEntry.setEntries(aeReq.getEntriesList());
-            appendEntry.setAllReplace(aeReq.getAllReplace());
+    //        appendEntry.setAllReplace(aeReq.getAllReplace());
             appendEntry.setPreLogTerm(aeReq.getPreLogTerm());
             appendEntry.setPreLogIndex(aeReq.getPreLogIndex());
             appendEntry.setTerm(aeReq.getTerm());
