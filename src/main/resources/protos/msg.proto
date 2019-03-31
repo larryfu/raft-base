@@ -1,0 +1,89 @@
+syntax = "proto3";
+package cn.larry.consensus;
+option java_package = "cn.larry.consensus.raft.proto";
+option java_outer_classname = "CommProtocolProto";
+
+message CommonRequest {
+    uint32 version = 1;
+    uint32 seq = 2;
+    uint32 msg_type = 3;
+    string client_ip = 4;
+    string server_ip = 5;
+    bytes body = 6;
+}
+
+message CommonResponse {
+    uint32 seq = 1; //请求序列号
+    int32 code = 2; //错误码
+    uint32 msg_type = 3;
+    string msg = 4; //错误信息
+    bytes body = 5; //body
+}
+
+enum MSG_TYPE {
+    EMPTY = 0;
+    APPEND_ENTRY = 1;
+    APPEND_ENTRY_RSP = 2;
+    REQUEST_VOTE = 3;
+    REQUEST_VOTE_RSP = 4;
+    CLIENT_REQUEST = 5;
+    CLIENT_REQUEST_RSP = 6;
+    INSTALL_SNAPSHOT = 7;
+    INSTALL_SNAPSHOT_RSP = 8;
+}
+
+message AppendEntryReq {
+    uint64 term = 1; // leader的term
+    uint32 leaderId = 2; //
+    uint64 preLogIndex = 3; //前一个logEntry的index
+    uint64 preLogTerm = 4; //前一个logEntry的term
+    uint64 leaderCommit = 5; //leader 的commitIndex
+    repeated LogEntry entries = 6; //需存储的日志
+}
+message AppendEntryRsp {
+    uint64 term = 1; // 当前的term
+    bool success = 2; //如果找到和preLogterm proLogIndex匹配的LogEntry则成功
+}
+
+message RequestVoteReq {
+    uint64 term = 1; // 候选者的term
+    uint32 candidateId = 2; //候选者id
+    uint64 lastLogIndex = 3; //候选者的最后日志的index
+    uint64 lastLogTerm = 4; //候选者最后日志的term
+}
+
+message RequestVoteRsp {
+    uint64 term = 1; //当前term
+    bool voteGranted = 2; //是否投票支持
+}
+
+message LogEntry {
+    uint64 term = 1;
+    uint64 index = 2;
+    string command = 3;
+}
+
+message ClientRequest {
+    string command = 1;
+}
+
+message ClientResponse {
+    uint32 retcode = 1;
+    string msg = 2;
+    string leader = 3;
+    uint32 leaderPort = 4;
+}
+
+message installShanpshotReq {
+    uint64 term = 1;
+    uint32 leaderId = 2;
+    uint64 lastIncludeIndex = 3;
+    uint64 lastIncludeTerm = 4;
+    uint64 offset = 5;
+    bytes data = 6;
+    bool done = 7;
+}
+
+message installShanpshotRsp {
+    uint64 term = 1;
+}
