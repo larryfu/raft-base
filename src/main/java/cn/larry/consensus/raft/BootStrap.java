@@ -33,7 +33,7 @@ public class BootStrap {
 
     public static void main(String[] args) throws Exception {
         if (args.length < 1) {
-            System.out.println("usage : RaftServer  configPath");
+            System.out.println("usage : RaftServer  configPath   ");
             System.exit(1);
         }
 
