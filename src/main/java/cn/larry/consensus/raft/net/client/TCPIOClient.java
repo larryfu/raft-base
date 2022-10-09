@@ -1,13 +1,14 @@
-package cn.larry.consensus.raft.net;
+package cn.larry.consensus.raft.net.client;
 
 import cn.larry.consensus.raft.msg.CallbackMessageHandler;
+import cn.larry.consensus.raft.net.protocol.CommonRequestEncoder;
+import cn.larry.consensus.raft.net.protocol.CommonResponseDecoder;
 import cn.larry.consensus.raft.proto.CommProtocolProto;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.util.Attribute;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

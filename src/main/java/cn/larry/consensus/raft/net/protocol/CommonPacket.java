@@ -1,4 +1,4 @@
-package cn.larry.consensus.raft.net;
+package cn.larry.consensus.raft.net.protocol;
 
 public class CommonPacket {
     public static final byte START_BYTE = 40;

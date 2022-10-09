@@ -1,9 +1,8 @@
-package cn.larry.consensus.raft.net;
+package cn.larry.consensus.raft.net.client;
 
-import cn.larry.consensus.raft.RaftAlgorithm;
 import cn.larry.consensus.raft.msg.CommMessageProcessor;
-import cn.larry.consensus.raft.net.test.CommonServerHandler;
-import cn.larry.consensus.raft.net.test.TimeServerHandler;
+import cn.larry.consensus.raft.net.protocol.CommonReponseEncoder;
+import cn.larry.consensus.raft.net.protocol.CommonRequestDecoder;
 import cn.larry.consensus.raft.proto.CommProtocolProto;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -15,7 +14,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

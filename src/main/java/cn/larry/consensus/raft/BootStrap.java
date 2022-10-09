@@ -3,15 +3,13 @@ package cn.larry.consensus.raft;
 import cn.larry.consensus.raft.msg.ClientMessageProcessor;
 import cn.larry.consensus.raft.msg.CommMessageProcessor;
 import cn.larry.consensus.raft.msg.ServerMessageProcessor;
-import cn.larry.consensus.raft.net.ServerMessageSender;
-import cn.larry.consensus.raft.net.TCPIOClient;
-import cn.larry.consensus.raft.net.TCPIOServer;
+import cn.larry.consensus.raft.net.client.ServerMessageSender;
+import cn.larry.consensus.raft.net.client.TCPIOClient;
+import cn.larry.consensus.raft.net.client.TCPIOServer;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.PropertiesConfiguration;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.net.Inet4Address;
 import java.net.InetAddress;

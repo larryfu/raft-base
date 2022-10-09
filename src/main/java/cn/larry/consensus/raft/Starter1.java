@@ -9,11 +9,4 @@ public class Starter1 {
        BootStrap.main(arg1);
     }
 
-    public static void start(String[] args)  {
-        try {
-            BootStrap.main(args);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

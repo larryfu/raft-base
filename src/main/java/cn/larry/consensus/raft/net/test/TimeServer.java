@@ -1,8 +1,8 @@
 package cn.larry.consensus.raft.net.test;
 
 
-import cn.larry.consensus.raft.net.CommonReponseEncoder;
-import cn.larry.consensus.raft.net.CommonRequestDecoder;
+import cn.larry.consensus.raft.net.protocol.CommonReponseEncoder;
+import cn.larry.consensus.raft.net.protocol.CommonRequestDecoder;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;

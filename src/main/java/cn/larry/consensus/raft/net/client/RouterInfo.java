@@ -1,4 +1,4 @@
-package cn.larry.consensus.raft.net;
+package cn.larry.consensus.raft.net.client;
 
 import java.net.InetSocketAddress;
 

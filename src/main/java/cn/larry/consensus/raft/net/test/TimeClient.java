@@ -1,7 +1,7 @@
 package cn.larry.consensus.raft.net.test;
 
-import cn.larry.consensus.raft.net.CommonRequestEncoder;
-import cn.larry.consensus.raft.net.CommonResponseDecoder;
+import cn.larry.consensus.raft.net.protocol.CommonRequestEncoder;
+import cn.larry.consensus.raft.net.protocol.CommonResponseDecoder;
 import cn.larry.consensus.raft.proto.CommProtocolProto;
 import com.google.protobuf.ByteString;
 import io.netty.bootstrap.Bootstrap;

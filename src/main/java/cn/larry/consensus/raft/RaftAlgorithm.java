@@ -2,7 +2,7 @@ package cn.larry.consensus.raft;
 
 import cn.larry.consensus.raft.storage.Logs;
 import cn.larry.consensus.raft.msg.*;
-import cn.larry.consensus.raft.net.MessageSender;
+import cn.larry.consensus.raft.net.client.MessageSender;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

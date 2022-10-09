@@ -1,6 +1,6 @@
 package cn.larry.consensus.raft;
 
-import cn.larry.consensus.raft.net.TCPIOClient;
+import cn.larry.consensus.raft.net.client.TCPIOClient;
 import cn.larry.consensus.raft.proto.CommProtocolProto;
 
 import java.util.Random;

@@ -21,7 +21,7 @@ public class RocksDBSample {
 //        }
 
         //final String db_path = args[0];
-        final String db_path = "/opt/data/raft-base";
+        final String db_path = "/home/larryfu/data/rocksdb";
         final String db_path_not_found = db_path + "_not_found";
 
         System.out.println("RocksDBSample");

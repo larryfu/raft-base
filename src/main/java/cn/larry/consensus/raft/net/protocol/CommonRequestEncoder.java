@@ -1,4 +1,4 @@
-package cn.larry.consensus.raft.net;
+package cn.larry.consensus.raft.net.protocol;
 
 import cn.larry.consensus.raft.proto.CommProtocolProto;
 import io.netty.buffer.ByteBuf;

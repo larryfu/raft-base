@@ -1,9 +1,8 @@
 package cn.larry.consensus.raft.net;
 
+import cn.larry.consensus.raft.net.client.TCPIOClient;
 import cn.larry.consensus.raft.proto.CommProtocolProto;
 import cn.larry.consensus.raft.proto.CommProtocolProto.CommonRequest;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
