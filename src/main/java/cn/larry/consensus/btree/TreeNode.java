@@ -105,6 +105,13 @@ public class TreeNode {
         return treeNode;
     }
 
+    public void removeKey(long key){
+
+    }
+    public void removeKeyByIndex(int  index){
+
+    }
+
     public TreeNode deleteNode(long key){
 
         int index = -1;
@@ -130,11 +137,19 @@ public class TreeNode {
                 TreeNode rightBro = parent.subTreeNodes[];
                 //左边节点key数超过T，从左边节点借key
                 if(leftBro != null && leftBro.size >= T ){
+                    inset(leftBro.keys[leftBro.size-1],leftBro.values[leftBro.size-1);
+                    leftBro.removeKey(size-1);
 
                 }else if (rightBro !=null && rightBro.size >= T){
-
+                    inset(rightBro.keys[0],rightBro.values[0]);
+                    rightBro.removeKey(0);
                     //左右节点都小于T，合并左右节点
                 }else{
+                    int parentindex = getindex();
+                   TreeNode newNode =  mergeNode(leftBro,rightBro);
+                   newNode.inset(parent.keys[parentindex],parent.values[parentindex]);
+                   parent.removeKeyByIndex(parentindex);
+                   parent.subTreeNodes[parentindex] = newNode;
 
                 }
 
