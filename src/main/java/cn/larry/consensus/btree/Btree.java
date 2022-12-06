@@ -25,7 +25,7 @@ public class Btree {
                 throw new IllegalStateException("key already exists");
             }
         }
-        node.inset(key,value);
+        node.insert(key,value);
     }
 
     public void deleteNode(TreeNode head,long key){
@@ -39,6 +39,6 @@ public class Btree {
                 throw new IllegalStateException("key not exists");
             }
         }
-        node.deleteNode(key);
+        node.deleteByKey(key);
     }
 }
